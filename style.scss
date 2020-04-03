@@ -1,0 +1,234 @@
+@import 'variables';
+
+// *, *::after, *::before {
+//     margin: 0;
+// }
+
+// html * {
+//     min-width: 0;
+// }
+
+body {
+    margin: 0;
+    padding: 0; 
+    background: $bg-color-1;
+    font-family: $font-fam;
+    background-image: url(images/background-01.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.page-wrapper {
+    margin: $ml;
+}
+
+abbr {
+    color: red;
+}
+
+header {
+    padding: $ps;
+    margin: 0;
+    grid-column: 1 / 3;
+    border-bottom: $bs-s solid $b-color-1;
+
+    h1 {
+        font-size: $font-x;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: $font-m;
+    }
+}
+
+div.summary {
+    margin-top: $ms;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $b-color-2;
+    }
+}
+
+// Circles
+
+h3 {
+    font-size: 1.5em;
+}
+
+.preamble h3:after {
+    content:'';
+    display: none;
+}
+
+.explanation h3:after {
+    content:'';
+    display: none;
+}
+
+.participation h3:after {
+    content:'';
+    display: none;
+}
+
+.benefits h3:after {
+    content:'';
+    display: none;
+}
+
+.requirements h3:after {
+    content:'';
+    display: none;
+}
+
+// Footer
+
+footer {
+    margin-top: $ml;
+    padding-top: $pl;
+    font-size: $font-l;
+    font-weight: bold;
+    border-top: $bs-s solid $b-color-1;
+}
+
+// Screen Sizes
+
+@media only screen and (min-width: $S) {
+
+    .page-wrapper {
+        margin: $ml $mx;
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+
+    
+    header {
+        padding: $ps;
+        margin: 0;
+        grid-column: 1 / 3;
+        border-bottom: $bs-s solid $b-color-1;
+    
+        h1 {
+            font-size: $font-x;
+            margin-bottom: $ms;
+        }
+    
+        h2 {
+            font-size: $font-l;
+        }
+    }
+
+    section.intro {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    aside.sidebar {
+        margin: 0 30px;
+    }
+    // Circle
+    .preamble h3:after {
+        content:'';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-image: url(images/circle-04.svg);
+        margin: 0 10px;
+    }
+    
+    .explanation h3:after {
+        content:'';
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background-image: url(images/circle-01.svg);
+        margin: 0 10px;
+    }
+    
+    .participation h3:after {
+        content:'';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-image: url(images/circle-05.svg);
+        margin: 0 10px;
+    }
+    
+    .benefits h3:after {
+        content:'';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-image: url(images/circle-03.svg);
+        margin: 0 10px;
+    }
+    
+    .requirements h3:after {
+        content:'';
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background-image: url(images/circle-02.svg);
+        margin: 0 10px;
+    }
+
+    // Navs
+
+    ul {
+        padding-left: 5px;
+        margin: 0;
+        border-left: 10px double $b-color-2;
+        
+            li {
+                padding-left: 5px;
+                margin-left: 4px;
+            }
+        }
+
+    footer {
+        margin-top: $ml;
+        padding-top: $pl;
+        font-size: $font-l;
+        font-weight: bold;
+        border-top: $bs-s solid $b-color-1;
+        z-index: 2;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: $M) {
+
+    .page-wrapper {
+        margin: $ml $mx;
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+
+    section.intro {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    aside.sidebar {
+        margin: 0 30px;
+    }
+
+    footer {
+        z-index: 2;
+        width: 100%;
+    }
+
+}
+
